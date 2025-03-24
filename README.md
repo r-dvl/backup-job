@@ -17,11 +17,20 @@ spec:
           - name: backup
             image: ghcr.io/r-dvl/backup-job:latest
             args: ["/mnt/Storage/DATA/", "/mnt/Backup/DATA/"]
+            env:
+            - name: SRC_PATH
+              value: /source/
+            - name: BACKUP_PATH
+              value: /backup/
+            - name: WEB_UI
+              value: "true"
+            - name: WEBHOOK_URL
+              value: https://example-webhook.com
             volumeMounts:
             - name: backup-volume
-              mountPath: /mnt/Backup
+              mountPath: /backup
             - name: storage-volume
-              mountPath: /mnt/Storage
+              mountPath: /source
           restartPolicy: OnFailure
           volumes:
           - name: backup-volume

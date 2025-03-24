@@ -27,7 +27,7 @@ EXPOSE 8080
 ENV SRC_PATH="/source/"
 ENV BACKUP_PATH="/backup/"
 ENV WEB_UI=true
-ENV WEBHOOK_URL="https://discord.com/api/webhooks/1323312161350484120/LiaSGEPX3Mi14EDO_1bEn13ekJGhSexK7Mf3fjAZwa_iZwlzo8mpphPX7YreM6xXSXrh"
+ENV WEBHOOK_URL="https://example-webhook.com"
 
 # Streamlit configuration
 ENV STREAMLIT_SERVER_HEADLESS=true
