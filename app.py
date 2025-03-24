@@ -7,7 +7,7 @@ def run_script(arg1, arg2):
     script_args = [arg1, arg2]
 
     process = subprocess.Popen(
-        ["bash", "backup.sh"] + script_args,
+        ["bash", "src/backup.sh"] + script_args,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         bufsize=1,
