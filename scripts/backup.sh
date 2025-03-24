@@ -32,13 +32,13 @@ if [ "$RSYNC_STATUS" -eq 0 ]; then
        -H "Content-Type:application/json" \
        -X POST \
        --data "{\"content\": \"Backup completed successfully from $SOURCE to $DESTINATION.\"}" \
-       "https://discord.com/api/webhooks/1323312161350484120/LiaSGEPX3Mi14EDO_1bEn13ekJGhSexK7Mf3fjAZwa_iZwlzo8mpphPX7YreM6xXSXrh"
+       ${WEBHOOK_URL}
 else
   echo "Error: rsync encountered an issue."
   curl -i -H "Accept: application/json" \
        -H "Content-Type:application/json" \
        -X POST \
        --data "{\"content\": \"Backup failed.\"}" \
-       "https://discord.com/api/webhooks/1323312161350484120/LiaSGEPX3Mi14EDO_1bEn13ekJGhSexK7Mf3fjAZwa_iZwlzo8mpphPX7YreM6xXSXrh"
+       ${WEBHOOK_URL}
   exit 3
 fi
